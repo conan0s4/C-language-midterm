@@ -1,0 +1,49 @@
+algo/pseudo:
+hackerrank site (coding challenge)
+
+
+SOLVE ME FIRST
+the function (solvemefirst) has a parameter of 2 integers a & b
+this method was used in the main class 
+its non static so we call the method directly
+from the main method we ask for the users input for integer value 1 & 2
+we then use solvemefirst function to add the two values and so the method returns the results
+which was done in that function
+
+
+A VERY BIG SUM
+in the main method we asked user to input array or set of numbers
+then we use the averybigsum function to get the sum of the set of numbers that 
+was given in our main method...ittirating through the array adding current number to the current setted sum 
+until we get the total sum of the array..returning that result to our main method and lastly outputting it 
+
+
+
+BIRTHDAY CAKE CANDLES
+in the challenge it was said that only the tallest candles will be blown 
+the age & candles where set already in the main class
+in our birthdaycakecandles method or function we got the candles from the main and will be
+using those elements here in our birthdaycakecandles function..first off we try and find the tallest candle with the help of .max()
+& next is we gonna be counting the number of elements in the the array  using .count() but we 
+will be adding some conditions where it counts the tallest candles...
+if the candle is equals to the max or the tallest candle then that includes it to the count
+after that we return the results to our main which gives us the number of candles 
+that will be blown
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
