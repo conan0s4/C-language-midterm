@@ -30,8 +30,277 @@ if the candle is equals to the max or the tallest candle then that includes it t
 after that we return the results to our main which gives us the number of candles 
 that will be blown
 
+he Love-Letter Mystery
+take string s, compare letters from start and end moving toward middle, for each mismatch calculate how many steps to reduce higher char to match lower char, sum all these steps and return total as result, trim input strings of spaces weirdly using ltrim/rtrim before processing, loop over all queries and output each result
 
- 
+Weighted Uniform Strings
+scan string left to right count streak of same chars multiply by char value store all results check each query if in results print yes else no
+
+
+Viral Advertising
+start with 5 people they each share ad every day calculate likes as floor of half of people reached keep a running total of all likes received repeat this process for n days accumulating total likes finally return total likes after n days
+
+Utopian Tree
+start with height 1 for n cycles every cycle check if cycle is odd then double height else add one to height keep updating height each cycle after n cycles return final height
+
+Two Strings
+take the first string go through each character and keep track of all unique characters in a set or map then take the second string and for each character check if it exists in the set of first string characters if at least one character matches then immediately return yes otherwise after checking all characters return no
+
+
+Tower Breakers
+check if all towers have height 1 if yes player 2 wins else if number of towers is even player 2 can mirror moves to win else player 1 makes first move and can always force a win return the player who wins based on these conditions
+
+Time Conversion
+extract hour minute second and am/pm from input if am and hour is 12 change hour to 00 if pm and hour less than 12 add 12 to hour keep minutes and seconds same then combine hour minute second in 24 hour format and return result
+
+
+The Hurdle Race
+find the tallest hurdle in the list compare it with k the max jump the character can do if tallest is less than or equal to k return 0 else return difference between tallest hurdle and k as number of doses needed
+
+
+Taum and B'day
+compare cost of buying each type directly versus converting the other type if conversion cheaper then buy all of one type and convert needed amount else buy each type directly multiply number of black gifts by chosen black cost multiply number of white gifts by chosen white cost sum both totals return final cost
+
+Super Reduced String
+scan string left to right check for adjacent identical characters if found remove both repeat this process until no more adjacent duplicates remain return resulting string or empty string if all removed
+
+
+Sum vs XOR
+count number of zero bits in n each zero bit can be either 0 or 1 in x so total numbers satisfying n + x = n ^ x is 2 to the power of number of zero bits return that count
+
+
+Subarray Division
+slide a window of size m over the array s for each window calculate sum if sum equals d increment count continue until all windows checked return total count of valid segments
+
+
+Strong Password
+check if password has at least one digit one lowercase one uppercase one special character count missing types then check if length less than 6 calculate difference between 6 and current length return the max of missing types and length difference as minimum characters needed
+
+
+
+String Construction
+go through string keep track of unique characters each unique character costs 1 to add to empty string total cost is number of unique characters return that count
+
+
+Strange Counter
+start with counter at 3 and cycle length 3 for each cycle check if t falls within current cycle if not double cycle length and update start time continue until t within current cycle then calculate value as starting value minus (t - cycle start) return that value
+
+
+
+Staircase
+loop from 1 to n for each row print n minus current row number of spaces then print current row number of hashes repeat for all rows to form right-aligned staircase pattern
+
+Solve Me First
+take two numbers a and b add them together return the sum
+
+
+Simple Array Sum
+go through each element in the array keep a running total sum add each element to sum after processing all elements return the final sum
+
+
+Sherlock and The Beast
+try to use as many 5s as possible in groups of 3 if remaining digits can be filled with 3s in groups of 5 then print that many 3s else reduce number of 5s by 3 and repeat if no combination possible print -1 finally print the constructed decent number
+
+Sherlock and Squares
+find the smallest integer whose square is greater than or equal to a find the largest integer whose square is less than or equal to b count all integers between these two numbers inclusive return that count as number of perfect squares
+
+
+Sherlock and Array
+calculate total sum of array initialize left sum as 0 go through each element for current element check if left sum equals total sum minus left sum minus current element if yes return yes else add current element to left sum continue until end return no if no balance point found
+
+
+
+Sequence Equation
+for each number x from 1 to n find position y in array p such that p[y] equals x then find position z such that p[z] equals y store z in result repeat for all numbers return the result array
+
+Save the Prisoner!
+calculate position as (s - 1 + m - 1) modulo n add 1 to get 1-based index return that position as the prisoner who gets last sweet
+
+
+
+
+Sales by Match
+count occurrences of each sock type in the array then for each type calculate how many pairs can be made by dividing count by 2 sum all pairs and return the total number of pairs
+
+
+Running Time of Algorithms
+simulate insertion sort keep a counter for number of shifts for each element compare it with previous elements and shift larger elements to the right increment counter for each shift after sorting all elements return total shift count
+
+
+
+Repeated String
+count number of a's in the original string calculate how many full repetitions fit into n multiply count by number of full repetitions count a's in the remaining partial substring add to total return total number of a's
+
+
+Quicksort 1 - Partition
+choose the first element as pivot partition the array into two subarrays one with elements less than pivot and one with elements greater than pivot recursively quicksort each subarray then combine the sorted left subarray pivot and sorted right subarray return the combined array
+
+Priyanka and Toys
+sort the weights array initialize a counter for containers start with the first weight as the first container then iterate through the sorted array for each weight if it fits in the current container continue else increment the container counter and set new container starting from this weight return the container counter at the end
+
+
+Print the Elements of a Linked List
+start at head of linked list take current node print its data move to next node repeat this process until there are no more nodes left then stop
+
+
+Plus Minus
+go through the array count how many numbers are positive how many are negative how many are zero then divide each count by total number of elements to get their fractions and print the fractions in order positive fraction then negative fraction then zero fraction
+
+
+
+Picking Numbers
+take the array sort it to make comparisons easier then for each number count how many numbers exist in the array that are equal to it or exactly one greater keep track of the maximum count found after checking all numbers return the maximum count as the result
+
+
+
+Pangrams
+convert all letters in string to lowercase then go through each character keeping track of unique letters seen if all 26 letters of alphabet are present return pangram else return not pangram
+
+
+Number Line Jumps
+compare starting positions and velocities check if faster kangaroo is behind if yes keep moving both by their velocities each jump check if positions match if they ever match return yes if faster one passes the other without matching return no
+
+
+Modified Kaprekar Numbers
+loop through all numbers from p to q for each number square it convert square to string split string into two parts left and right if right part is empty consider it as zero convert both parts back to integers sum them if sum equals original number then print number continue for all numbers in range
+
+Missing Numbers
+count frequency of each number in both arrays create a map for arr and a map for brr compare counts for each number in brr if count in arr is less than count in brr then add number to result list finally sort result list and return it
+
+Minimum Distances
+go through array for each element check all following elements if same value found calculate distance between indices keep track of minimum distance found after checking all pairs return minimum distance if no pairs found return -1
+
+
+Minimum Absolute Difference in an Array
+sort the array first then go through array comparing each element with next one calculate absolute difference keep track of smallest difference found continue until end return the smallest absolute difference found
+
+Mini-Max Sum
+take all five numbers calculate total sum of all numbers find minimum value in array find maximum value in array subtract maximum from total sum to get minimum sum subtract minimum from total sum to get maximum sum print minimum sum and maximum sum separated by space
+
+
+Migratory Birds
+go through the array count how many times each bird type appears keep track of maximum count and the type that has it if multiple types have same maximum count pick the smallest type number return that type
+
+Maximum Perimeter Triangle
+sort all stick lengths in ascending order then start from largest three sticks check if they can form a triangle by verifying sum of any two sides greater than third if yes return these three sticks as result if not move to next smaller triplet repeat until a valid triangle is found if none found return -1
+
+
+Maximizing XOR
+check all pairs of numbers i and j where i and j are between l and r inclusive calculate xor of each pair keep track of the maximum xor found after checking all pairs return the maximum xor value
+
+Mars Exploration
+take the input string divide it into chunks of three characters for each chunk compare each character to expected sequence s o s count how many characters do not match keep a running total of mismatches after checking all chunks return total mismatches
+
+
+Marc's Cakewalk
+sort the calorie array in descending order then for each cupcake multiply its calorie by 2 to the power of its index in the sorted array keep a running total of all these values finally return the total as the minimum miles needed
+
+
+
+Manasa and Stones
+start with n stones each turn can add either a or b to previous total track all possible outcomes use a set to avoid duplicates loop through all combinations of a and b additions for n-1 steps finally collect all unique totals sort them and return as list
+
+
+Luck Balance
+separate contests into important and unimportant sum all luck from unimportant contests sort important contests by luck descending lose k highest luck important contests add their luck win rest subtract their luck finally return total luck accumulated
+
+Lonely Integer
+go through all numbers in the array keep track of counts for each number using map or dictionary then find the number that appears only once return that number as the lonely integer
+
+
+
+Lisa's Workbook
+start with page 1 go through each chapter count problems split them into pages with at most k problems per page for each page check if the page number matches any problem number if yes increment special problem count continue until all chapters processed finally return total count of special problems
+
+
+Library Fine
+compare years first if returned year after due year then fine is 10000 else if same year check months if returned month after due month fine is 500 × months late else if same month check days if returned day after due day fine is 15 × days late else no fine return calculated fine
+
+
+
+Left Rotation
+take the array and number of rotations d split array into two parts first d elements and the rest then move first d elements to the end of the rest combine them to form new array and return it
+
+Largest Permutation
+create a map of each number to its index go through the array from left to right for each position check if the current number is the largest possible number that can be here if not swap it with the position of that largest number decrement k after each swap stop swapping when k reaches zero continue until end of array return the final array
+
+Jumping on the Clouds: Revisited
+start at cloud 0 with 100 energy jump k clouds ahead each jump subtract 1 energy if landing on thundercloud subtract additional 2 energy keep jumping in a circle until back at start then return remaining energy
+
+
+
+Jumping on the Clouds
+start at first cloud keep a counter for jumps while not at last cloud check if two clouds ahead is safe if yes jump two clouds else jump one cloud increment jump counter each move continue until reach last cloud then return total jumps
+
+Jim and the Orders
+go through each order calculate finish time as order time plus prep time keep track of original index pair it with finish time sort all orders by finish time in ascending order then extract the indices in sorted order return the list of indices
+
+
+Intro to Tutorial Challenges
+go through array from start to end compare each element with target value if element equals target return its index stop searching once found
+
+
+Insertion Sort - Part 2
+start from second element in array take current value compare with all previous elements shift all larger elements one position to the right insert current value in correct position print array after each insertion repeat until entire array is sorted
+
+Insertion Sort - Part 1
+take last element as key compare it with elements to its left shift all elements greater than key one position to the right print array each time a shift happens insert key in correct position once all elements to left are smaller than key print final array state
+
+Insert a Node at the Tail of a Linked List
+check if head is null if yes create new node with data and return it else start at head traverse until next is null then create new node with data and attach it to last node finally return head
+
+
+Ice Cream Parlor
+go through array with two loops for each pair of flavors check if sum equals m if yes store their 1 based indices return first pair found that adds up to m continue until solution is found for each trip case
+
+
+Happy Ladybugs
+check if string contains any ladybug that occurs only once if yes return no then check if there is at least one empty space if string is already grouped correctly return yes otherwise if there is empty space return yes because bugs can be rearranged else return no
+
+
+Halloween Sale
+start with game price p set total spent to zero and count to zero while you have enough money to buy current game add game price to total spent increment count decrease price by d but not below minimum m repeat until total spent exceeds available money s then return count of games bought
+
+
+HackerRank in a String!
+set a target string as hackerrank keep an index for target start at 0 scan input string from left to right for each character check if it matches current target character if yes move target index forward continue until end of input string if target index reached end of target return yes else return no
+
+Grid Challenge
+for each row in grid sort the characters in ascending order then check each column from top to bottom if characters are non decreasing if all columns are sorted return yes else return no
+
+Grading Students
+go through each grade in list if grade is less than 38 leave it as is else find next multiple of 5 if difference between grade and next multiple is less than 3 round grade up to that multiple otherwise keep grade same collect all updated grades in a list and return the list
+
+Game of Thrones - I
+count frequency of each character in the string check how many characters have odd counts if more than one character has odd count then return no otherwise return yes
+
+Game of Stones
+for each test case take number of stones check if n modulo 7 is 0 or 1 if yes then second player can always win return second else first player can force a win return first
+
+Funny String
+take the string get ascii differences between each pair of consecutive chars then reverse the string and get differences again compare both difference sequences if they are same return funny else return not funny
+
+Flatland Space Stations
+sort the list of space station cities then check the distance from start to first station and from last station to end keep track of max distance between consecutive stations for each city calculate distance to nearest station update max distance finally return the largest distance found
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
