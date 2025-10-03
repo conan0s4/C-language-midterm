@@ -283,34 +283,141 @@ take the string get ascii differences between each pair of consecutive chars the
 Flatland Space Stations
 sort the list of space station cities then check the distance from start to first station and from last station to end keep track of max distance between consecutive stations for each city calculate distance to nearest station update max distance finally return the largest distance found
 
+Find the Median
+take the array sort it in non decreasing order then find the middle index if size is odd return element at middle index if size is even return element at lower middle index as median
+
+
+Find Digits
+take number n convert it to string go through each digit check if digit is not zero and divides n evenly if yes increment a counter after checking all digits return the counter as result
+
+
+Fair Rations
+scan array from left to right whenever you find an odd number give one bread to it and one to next neighbor increase count by two continue this for entire array if at end all numbers are even return total count else return no
+
+Equalize the Array
+count frequency of each number in the array find the number with the highest frequency then calculate how many elements are not equal to that number which is total elements minus max frequency return that count as the minimum deletions needed to equalize the array
+
+Electronics Shop
+loop through every keyboard price for each keyboard loop through every drive price sum the two prices if sum is less than or equal to budget keep track of maximum sum after checking all pairs return maximum sum or return -1 if no combination is within budget
+
+Dynamic Array
+start with n empty sequences keep lastAnswer as 0 then for each query check type if type 1 compute index as (x xor lastAnswer) mod n append y to sequence at that index if type 2 compute index same way get element at y mod size of sequence set lastAnswer to that element and store lastAnswer in result repeat for all queries return list of all lastAnswer values collected
+
+Drawing Book
+calculate turns from front as floor of target page divided by 2 calculate turns from back as floor of total pages minus target page divided by 2 return the smaller of the two values
 
 
 
+Divisible Sum Pairs
+take the array loop through each element for each element loop through all elements after it calculate sum of the pair if sum is divisible by k increment count keep doing this for all pairs finally return the total count of divisible pairs
 
 
+Diagonal Difference
+take the square matrix sum all elements from top left to bottom right diagonal then sum all elements from top right to bottom left diagonal take absolute difference between the two sums return the difference
 
 
+Designer PDF Viewer
+for each letter in word find its height from h array keep track of maximum height multiply maximum height by length of word return result as highlighted area of word
+
+Day of the Programmer
+check if year is 1918 then return 26 dot 09 dot 1918 else if year before 1918 use julian leap rule if divisible by 4 then 12 dot 09 dot year else 13 dot 09 dot year else after 1918 use gregorian leap rule if divisible by 400 or divisible by 4 and not by 100 then 12 dot 09 dot year else 13 dot 09 dot year
 
 
+Cut the sticks
+start with the array while array is not empty count number of sticks print count find the smallest stick in array subtract its length from all sticks remove sticks that become zero repeat this process until no sticks remain and return all counts collected
 
 
+Counting Valleys
+start at sea level keep a counter for current level and valleys set current level to zero for each step in path if step is up increment level if step is down decrement level each time you move up check if you just came up to sea level if yes increment valley count continue until all steps are processed then return total valley count
+
+Counting Sort 2
+find the maximum value in array create a frequency array of size max plus one initialize all to zero go through original array increment count of each value in frequency array finally return frequency array representing counts of each number in original array
+
+Counting Sort 1
+create an array of size equal to the max value possible in input initialize all elements to zero loop through input array for each number increment its corresponding index in count array after counting all elements return the count array which shows frequency of each number in input
+
+Compare the Triplets
+take two arrays of size three compare each element at same index if element in first array greater than second give one point to first else if element in second array greater give one point to second else give no points keep a running total for both arrays after comparing all three elements return array with two totals representing points for first and second arrays
 
 
+Closest Numbers
+sort the array first then go through adjacent elements calculate differences keep track of smallest difference found then go again through array collecting all pairs whose difference equals smallest difference return all those pairs in order
+
+Circular Array Rotation
+take the array count its size then for the number of rotations take k modulo array size to avoid full cycles then for each query calculate the original index by subtracting k from query index if result negative wrap around by adding array size then take value at that index from original array collect all results for queries and return them
 
 
+Chocolate Feast
+start with n money calculate how many chocolates can buy initially divide n by c keep count then use wrappers earned from eaten chocolates exchange m wrappers for 1 chocolate repeat process adding new chocolates and updating wrappers until not enough wrappers to exchange finally return total chocolates eaten
+
+Cavity Map
+take the grid ignore the border cells for each inner cell check its value against the values of top bottom left and right neighbors if current cell is greater than all four neighbors mark it as cavity with X otherwise keep original value repeat for all inner cells return modified grid
+
+Cats and a Mouse
+calculate distance from cat a to mouse and cat b to mouse compare distances if cat a is closer return cat a if cat b is closer return cat b if both distances are equal return mouse escapes
+
+CamelCase
+start with count 1 for first word then scan each character in string if character is uppercase increment count continue until end of string then return total count of words
+
+Caesar Cipher
+take each character in the string check if it is a letter if it is uppercase shift it by k within uppercase alphabet if it is lowercase shift it by k within lowercase alphabet if it is not a letter leave it as is build new string with shifted characters and return it
+
+Breaking the Records
+start with first score as initial min and max keep two counters for min breaks and max breaks go through each score if score greater than current max increment max counter and update max if score less than current min increment min counter and update min after checking all scores return both counters as result array
 
 
+Birthday Cake Candles
+scan through all candle heights find the maximum height then go through candles again counting how many times maximum height appears finally return that count as number of tallest candles blown out
 
 
+Bill Division
+sum all items in bill except the item at index k divide the sum by two compare it with b if they are equal print bon appetit else print the difference between b and actual share
+
+Big Sorting
+take the array of number strings first compare lengths of strings shorter ones come first if lengths are equal compare lexicographically sort all strings using this rule finally return sorted array
 
 
+Between Two Sets
+find all numbers between max of first array and min of second array for each number check if it is divisible by all elements in first array and also if it divides all elements in second array count it if both conditions are true keep running total return total count after checking all numbers in range
 
 
+Beautiful Triplets
+go through array take each element as start look for two more elements ahead such that each next element minus previous equals d count every time such a triplet is found keep running total return total count after checking all elements
+
+Beautiful Pairs
+go through both arrays count frequency of each number in A and B then for each number in A check if it exists in B if yes pair them and decrease their counts keep track of total pairs finally return total pairs plus one if needed to maximize beautiful pairs or minus one depending on problem condition
 
 
+Beautiful Days at the Movies
+loop from i to j for each number reverse its digits calculate absolute difference between original and reversed number if difference divisible by k then count it as beautiful keep a running total of beautiful days after finishing loop return total count
+
+Apple and Orange
+for each apple calculate its landing position by adding its distance to tree a count if it falls between s and t do same for oranges using tree b count if it falls between s and t after checking all fruits print total apples on house then total oranges on house
+
+Append and Delete
+find length of common prefix between s and t then calculate number of deletions needed from s and additions needed to reach t sum them if sum is less than or equal to k and difference between k and sum is even or k large enough to delete whole s and build t then return yes else return no
 
 
+Angry Professor
+count number of students with arrival time less than or equal to zero if count is greater than or equal to k then class happens return no else class is canceled return yes
 
+
+Anagram
+check if string length is odd if yes return -1 else split string into two halves count frequency of each character in first half count frequency of each character in second half for each character calculate difference between halves sum all differences divide by two return that number as minimum changes needed
+
+
+Alternating Characters
+start with a counter at zero go through string from left to right for each character compare it with previous character if same increment counter else continue keep checking until end of string finally return counter as number of deletions needed to make characters alternate
+
+
+ACM ICPC Team
+take all possible pairs of people for each pair combine their topics by checking each topic bit if either person knows it count total known topics for pair keep track of maximum topics any pair can know also count how many pairs reach that maximum finally return array with maximum topics and number of pairs that achieve it
+
+A Very Big Sum
+start with total sum zero go through each number in the array add it to total sum keep updating sum for all numbers after finishing return the final total sum
+
+2D Array - DS
+scan the 6x6 array for all possible hourglass positions take sum of top three, middle one, bottom three keep track of maximum sum found repeat for all hourglasses return the maximum sum after checking all positions
 
 
 
