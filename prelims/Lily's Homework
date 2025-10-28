@@ -1,0 +1,85 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Result
+{
+
+    /*
+     * Complete the 'lilysHomework' function below.
+     *
+     * The function is expected to return an INTEGER.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static int lilysHomework(List<int> arr)
+    {
+        List<int> asc = new List<int>(arr);
+        asc.Sort();
+        List<int> desc = new List<int>(asc);
+        desc.Reverse();
+
+        int swapsAsc = CountSwaps(new List<int>(arr), asc);
+        int swapsDesc = CountSwaps(new List<int>(arr), desc);
+
+        return Math.Min(swapsAsc, swapsDesc);
+    }
+
+    static int CountSwaps(List<int> arr, List<int> target)
+    {
+        Dictionary<int, int> pos = new Dictionary<int, int>();
+        for (int i = 0; i < arr.Count; i++)
+            pos[arr[i]] = i;
+
+        int count = 0;
+        for (int i = 0; i < arr.Count; i++)
+        {
+            if (arr[i] != target[i])
+            {
+                count++;
+                int swapIdx = pos[target[i]];
+
+                // swap
+                pos[arr[i]] = swapIdx;
+                pos[target[i]] = i;
+
+                int temp = arr[i];
+                arr[i] = arr[swapIdx];
+                arr[swapIdx] = temp;
+            }
+        }
+        return count;
+    
+
+    }
+
+}
+
+class Solution
+{
+    public static void Main(string[] args)
+    {
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+
+        int n = Convert.ToInt32(Console.ReadLine().Trim());
+
+        List<int> arr = Console.ReadLine().TrimEnd().Split(' ').ToList().Select(arrTemp => Convert.ToInt32(arrTemp)).ToList();
+
+        int result = Result.lilysHomework(arr);
+
+        textWriter.WriteLine(result);
+
+        textWriter.Flush();
+        textWriter.Close();
+    }
+}
