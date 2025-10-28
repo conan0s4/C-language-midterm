@@ -1,0 +1,250 @@
+Non-Divisible Subset
+take the set numbers then mod each by k store how many times each remainder appears then start counting
+if remainder 0 exists only one can stay in subset
+then go loop from 1 until k divide by 2 take the higher count between remainder i and remainder k minus i
+if k even then only one can stay from remainder k divide by 2
+add them all up that’s the answer
+
+Queen's Attack II
+queen can move in eight directions
+store all obstacles in a quick lookup like set
+for each direction move one step at a time
+if next square still inside board and not blocked keep counting
+if hit obstacle or outside stop that direction
+after checking all directions total squares counted is answer
+
+Bigger is Greater
+find from end the first letter that breaks descending order
+then find from end the smallest letter bigger than that letter
+swap them
+reverse everything after that position
+if no break found then say no answer
+
+3D Surface Area
+start
+get H W
+get 2d list A
+init totalarea = 0
+loop row from 0 to H-1
+loop col from 0 to W-1
+current = A[row][col]
+if current > 0 then add 2 to totalarea // top and bottom
+// check up
+if row == 0 then add current to totalarea
+else add max(0 current - A[row-1][col])
+// check down
+if row == H-1 then add current to totalarea
+else add max(0 current - A[row+1][col])
+// check left
+if col == 0 then add current to totalarea
+else add max(0 current - A[row][col-1])
+// check right
+if col == W-1 then add current to totalarea
+else add max(0 current - A[row][col+1])
+after loops print totalarea
+end
+
+Absolute Permutation
+if k equal 0 then just output numbers 1 to n
+if n mod (2 times k) not equal 0 then no possible so output -1
+else start from 1 to n
+make a flip flag false
+every block of size k switch between adding k and subtracting k
+if flip false then add k to i
+else subtract k from i
+every k count toggle flip
+collect in list then return it
+
+Larry's Array
+count how many swaps or inversion happen in the array
+each time i check if any element before is bigger than one after i count that
+if that count is even then yes else no
+
+Almost Sorted
+copy array sort it check if same if yes print yes return
+find all index where element is not equal to sorted version store them
+if no index found print yes return
+if count of mismatch is two swap those two in original check if sorted if yes print yes swap index1plus1 index2plus1 return
+else reverse the segment from first mismatch to last mismatch check if sorted if yes print yes reverse firstplus1 lastplus1 return
+else print no
+
+Lily's Homework
+make a copy of arr called asc sort it ascending
+make a copy of arr called desc sort it descending
+now define a helper that counts swaps needed to turn arr into target
+inside helper
+make a map each value to its index
+count = 0
+loop i from 0 to arr length minus 1
+if arr[i] not equal target[i]
+then count plus one
+find index of target[i] using map
+swap arr[i] and arr[index]
+update map for swapped values
+after loop return count
+finally call helper once with asc once with desc
+return the smaller result
+
+
+Highest Value Palindrome
+start from both ends left and right
+count mismatched pairs
+store which ones not equal
+if mismatches > k then impossible return -1
+first pass fix the mismatched ones smallest to biggest
+each mismatch change lower digit to higher one
+use one change per mismatch mark position as changed
+second pass go again from both ends
+if still have extra changes left
+for each pair if both digits less than 9
+then if either one changed before then only need 1 more
+else need 2
+if can afford that change both to 9
+middle digit if odd length and still have one change make it 9
+return new string
+
+
+Sherlock and Anagrams
+make a dictionary store substring signature and its count
+loop len from 1 to length of s
+loop start from 0 to s length minus len
+take substring sort letters that’s the key
+if key not in dictionary add with 0 then add 1
+after all substring collected
+set total to 0
+for each key in dictionary
+if count more than 1
+add (count times count minus 1) divided by 2 to total
+return total
+
+Common Child
+make a table dp with size of both strings plus one rows and columns
+loop i from 1 to length of first string
+loop j from 1 to length of second string
+if the letter at s1[i minus 1] same as s2[j minus 1] then dp[i][j] equals dp[i minus 1][j minus 1] plus 1
+else dp[i][j] equals max of dp[i minus 1][j] and dp[i][j minus 1]
+after both loops the last cell dp[length of s1][length of s2] is the answer
+
+Hackerland Radio Transmitters
+sort houses in ascending order
+start from first house
+move forward until house distance greater than k from start
+step back one to get last within range
+place transmitter there
+move forward until house distance greater than k from transmitter
+repeat until all houses covered
+count how many transmitters placed
+return that count
+
+
+Pairs
+convert list to set
+set count to 0
+for each number in list
+if set contains number plus k
+add 1 to count
+return count
+
+The Coin Change Problem
+make an array dp of size n plus one
+set dp zero to one
+for each coin in c
+loop i from coin up to n
+add dp of i minus coin to dp of i
+after all loops end return dp of n
+
+
+Equal
+find min value from arr
+set base min as that value
+set ops to large number
+loop diff base from 0 to 4
+set count to 0
+loop each item in arr
+take diff = item - (base min - diff base)
+count += diff divided by 5
+diff = diff mod 5
+count += diff divided by 2
+diff = diff mod 2
+count += diff divided by 1
+end inner loop
+if count < ops then ops = count
+end outer loop
+return ops
+
+Sam and substrings
+initialize mod 1000000007
+initialize total 0
+initialize f 0
+for i from 0 to length of n minus 1
+convert n at i to integer digit
+update f as f times 10 plus digit times (i plus 1) modulo mod
+add f to total modulo mod
+return total modulo mod
+and in c# that looks like
+
+Lego Blocks
+create a list ways of size m plus 1 initialize all zero set ways at index 0 to 
+1 loop i from 1 to m set ways at i to sum of ways at i minus 1 i minus 2 i minus 
+3 i minus 4 where indexes are valid take modulo 1000000007 create a list total 
+of size m plus 1 initialize all zero loop i from 1 to m set total at i to ways 
+at i power n modulo 1000000007 create a list solid of size m plus 1 initialize 
+all zero set solid at 0 to 0 loop width from 1 to m set solid at width to total 
+at width loop cut from 1 to width minus 1 subtract 
+solid at cut times total at width minus cut modulo 
+1000000007 solid at width equals solid at width 
+modulo 1000000007 return solid at m
+
+Stock Maximize
+start profit zero start max future price zero loop from last day to first day set max future 
+price as max of current price and max future price add to profit max future price minus current price end loop return profit
+
+
+Red John is Back
+take n as input
+create an array ways of size n+1
+ways of 0 1 2 3 set to 1 1 1 1
+for i from 4 to n
+ways of i = ways of i-1 + ways of i-4
+this gives total arrangements of bricks
+next find number of primes up to ways of n
+create a bool array isprime of size ways of n +1 all true
+set isprime of 0 and 1 false
+for i from 2 to sqrt(ways of n)
+if isprime of i true
+for j = i*i to ways of n step i
+set isprime of j false
+count = 0
+for i from 2 to ways of n
+if isprime of i true
+increment count
+return count
+
+The Power Sum
+start with X N given
+make a function helper that takes total power num
+convert num to the power
+if val equals total return 1 means found one combo
+if val bigger stop return 0
+otherwise keep checking two sides
+one include that number minus its power
+one skip that number and move to next
+add both counts get total ways
+start helper from num 1 until done
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
