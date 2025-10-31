@@ -232,15 +232,97 @@ one skip that number and move to next
 add both counts get total ways
 start helper from num 1 until done
 
+The Hurdle Race
+get the biggest hurdle
+compare it with k
+if k enough say zero
+if not enough say the difference
+
+Separate the Numbers
+start take string s check each split half take start if start 
+has 0 skip then loop add next number as string until length 
+reach same compare if equal say yes and print first 
+number else say no
 
 
 
+Making Anagrams
+the idea here is i just count how many times each letter appears 
+in both strings then for every letter i subtract the counts and 
+take the absolute value to see how many need to be deleted to 
+balance them and finally i add up all those differences to 
+get the total deletions needed to make them perfect anagrams
+
+
+Sherlock and Cost
+so the idea here is just thinking every element can either be 
+the lowest possible one or the highest value from b then track
+two possibilities low means we pick one and high means we pick 
+the given number each step we update them based on which gives 
+higher difference we take absolute difference between consecutive 
+pairs and keep adding that up we compare both paths each time so 
+by the end whichever is larger gives the total max cost
+
+
+Short Palindrome
+the idea here is basically like this i go through each character 
+one by one keeping track how many ways i can build patterns that 
+lead up to that 4 letter palindrome so first counts single letters 
+then second counts pairs then third counts triplets that can form
+with matching first and last letter and finally when i reach 
+another matching letter i add that to the total count as a 
+valid 4-length palindrome all done under 
+modulo so it won’t overflow
+
+Minimum Loss
+lauren has to buy the house one year and sell it another year but with a 
+loss so to minimize that loss i first keep track of each price and its 
+original year index then i sort all prices ascending so i can compare 
+only close values next i loop from the second smallest to the largest 
+and for each pair i check if the higher price happened before the lower 
+one in the original order if so that means it’s a valid loss scenario 
+then i calculate the loss difference between the two and keep track 
+of the smallest one that satisfies that rule in the end i return 
+that smallest difference as the minimum possible loss
+
+
+Candies
+the logic goes like this each child starts with one candy then check
+from left to right if the next child has higher rating it gets one 
+more candy than the previous one after that go from right to left 
+if the previous child has higher rating than the next one make 
+sure it gets at least one more than the next one this way both 
+sides’ conditions are satisfied then sum up all candies for 
+the minimum total
+
+The Grid Search
+the logic goes like this it loops through every possible top left start 
+in the grid then checks if the first pattern row matches a substring in 
+that part if it does it continues checking the following pattern rows
+below it if all rows match perfectly it returns yes otherwise if it 
+finishes scanning everything without a match it returns no
 
 
 
+Correctness and the Loop Invariant
+the algorithm works by taking one element at a time from the unsorted 
+portion of the array and placing it into the correct position in the 
+sorted portion it starts at the second element and compares it 
+backward until it finds the right spot it shifts elements that 
+are greater than the current one and finally places it correctly 
+the fixed condition j>=0 ensures that the loop checks even the
+first index preventing skipping the smallest value after the
+final iteration the entire array is sorted and printed once
 
 
-
+New Year Chaos
+the logic goes like this I just count how many times a person was overtaken by 
+someone who originally was behind them I loop from the end of the list and check 
+if any person has moved more than two spots ahead if yes then it’s too chaotic 
+if not I check from two positions before their original place up to their 
+current position and count how many have higher numbers meaning they 
+bribed their way forward I add all those up to get the total number 
+of bribes and print it
 
 
 
